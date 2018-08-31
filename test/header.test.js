@@ -13,7 +13,6 @@ beforeEach(async () => {
     headless: false
   });
   page = await browser.newPage();
-
   await page.goto('localhost:3000');
 });
 
@@ -33,8 +32,6 @@ test('The header has the correct text', async () => {
 
 test('clicking login starts Oauth flow ', async () => {
   await page.click('.right a ');
-
   const url = await page.url();
-
-    expect(url).toMatch(/accounts\.google\.com/);
+  expect(url).toMatch(/accounts\.google\.com/);
 });
